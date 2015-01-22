@@ -1,6 +1,6 @@
 {
   "name": "pretty-readme",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "generate pretty readme for your repo using package.json",
   "main": "index.js",
   "scripts": {
