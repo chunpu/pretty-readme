@@ -1,0 +1,43 @@
+{
+  "name": "pretty-readme",
+  "version": "1.1.1",
+  "description": "generate pretty readme for your repo using package.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "bin": {
+    "pretty-readme": "./bin/pretty-readme.js"
+  },
+  "author": {
+    "name": "chunpu"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.2.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "readme"
+  ],
+  "_id": "pretty-readme@1.1.1",
+  "_shasum": "5f0bbe49cefea37c821c0d2adcf54db247dda5cc",
+  "_from": "pretty-readme@*",
+  "_npmVersion": "2.0.0-alpha-5",
+  "_npmUser": {
+    "name": "ftft1885",
+    "email": "ftft1885@163.com"
+  },
+  "maintainers": [
+    {
+      "name": "ftft1885",
+      "email": "ftft1885@163.com"
+    }
+  ],
+  "dist": {
+    "shasum": "5f0bbe49cefea37c821c0d2adcf54db247dda5cc",
+    "tarball": "http://registry.npmjs.org/pretty-readme/-/pretty-readme-1.1.1.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/pretty-readme/-/pretty-readme-1.1.1.tgz"
+}
