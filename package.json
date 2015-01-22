@@ -1,10 +1,11 @@
 {
   "name": "pretty-readme",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "generate pretty readme for your repo using package.json",
   "main": "index.js",
   "scripts": {
-    "test": "node test"
+    "test": "node test",
+	"readme": "./bin/pretty-readme.js > readme.md"
   },
   "bin": {
     "pretty-readme": "./bin/pretty-readme.js"

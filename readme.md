@@ -1,4 +1,4 @@
-pretty-readme@1.2.2
+pretty-readme@1.2.4
 ===
 
 [![Build status][travis-image]][travis-url]
@@ -6,8 +6,6 @@ pretty-readme@1.2.2
 [![Downloads][downloads-image]][downloads-url]
 
 generate pretty readme for your repo using package.json
-
-===
 
 Installation
 ---
@@ -28,7 +26,7 @@ Advanced
 
 Write your custom readme in `_readme.md`, `pretty-readme` will insert _readme.md before `License`
 
-### Support options
+#### Support options
 
 - coveralls
 - gittip
