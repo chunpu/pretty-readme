@@ -1,6 +1,6 @@
 {
   "name": "pretty-readme",
-  "version": "1.1.1",
+  "version": "1.2.2",
   "description": "generate pretty readme for your repo using package.json",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,7 @@
   "bin": {
     "pretty-readme": "./bin/pretty-readme.js"
   },
-  "author": {
-    "name": "chunpu"
-  },
+  "author": "chunpu",
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.2.1"
@@ -20,7 +18,6 @@
   "keywords": [
     "readme"
   ],
-  "_id": "pretty-readme@1.1.1",
   "_shasum": "5f0bbe49cefea37c821c0d2adcf54db247dda5cc",
   "_from": "pretty-readme@*",
   "_npmVersion": "2.0.0-alpha-5",
@@ -29,15 +26,20 @@
     "email": "ftft1885@163.com"
   },
   "maintainers": [
-    {
-      "name": "ftft1885",
-      "email": "ftft1885@163.com"
-    }
+    "ftft1885 <ftft1885@163.com>"
   ],
   "dist": {
     "shasum": "5f0bbe49cefea37c821c0d2adcf54db247dda5cc",
     "tarball": "http://registry.npmjs.org/pretty-readme/-/pretty-readme-1.1.1.tgz"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/pretty-readme/-/pretty-readme-1.1.1.tgz"
+  "_resolved": "https://registry.npmjs.org/pretty-readme/-/pretty-readme-1.1.1.tgz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chunpu/pretty-readme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chunpu/pretty-readme/issues"
+  },
+  "homepage": "https://github.com/chunpu/pretty-readme"
 }
