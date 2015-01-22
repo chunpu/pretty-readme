@@ -4,7 +4,7 @@ var path = require('path')
 var util = require('util')
 var url = require('url')
 
-module.exports = function() {
+module.exports = function(args) {
     var pwd = process.cwd()
     var name = path.resolve(pwd, 'package.json')
     var str = fs.readFileSync(name, 'utf8')
@@ -29,6 +29,11 @@ module.exports = function() {
         var arr = repo.split('/')
         pkg.user = arr[0]
         pkg.reponame = arr[1]
+    }
+    if (args && args.length) {
+        for (var i = 0, label; label = args[i++];) {
+            pkg[label] = true
+        }
     }
     //console.log(pkg)
     return render(pkg)
