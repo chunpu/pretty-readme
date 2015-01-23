@@ -1,4 +1,4 @@
-pretty-readme@1.2.4
+pretty-readme
 ===
 
 [![Build status][travis-image]][travis-url]
