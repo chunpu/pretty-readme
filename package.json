@@ -4,8 +4,9 @@
   "description": "generate pretty readme for your repo using package.json",
   "main": "index.js",
   "scripts": {
-    "test": "node test",
-    "readme": "./bin/pretty-readme.js > readme.md"
+    "test": "npm run test-cov",
+    "test-cov": "istanbul cover node_modules/.bin/_mocha -- --check-leaks",
+    "readme": "./bin/pretty-readme.js coveralls > readme.md"
   },
   "bin": {
     "pretty-readme": "./bin/pretty-readme.js"
@@ -29,5 +30,9 @@
   "bugs": {
     "url": "https://github.com/chunpu/pretty-readme/issues"
   },
-  "homepage": "https://github.com/chunpu/pretty-readme"
+  "homepage": "https://github.com/chunpu/pretty-readme",
+  "devDependencies": {
+    "mocha": "^2.1.0",
+    "istanbul": "^0.3.6"
+  }
 }

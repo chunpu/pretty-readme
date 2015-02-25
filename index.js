@@ -6,11 +6,21 @@ var co = require('co')
 var _ = require('min-util')
 var debug = require('debug')('pretty-readme')
 
-module.exports = function(badges) {
-	return render(badges)
-}
+module.exports = exports = render
 
 function render(badges) {
+	return co(function* () {
+		var pkg = yield initParam(badges)
+		var template = yield fs.readFile(path.resolve(__dirname, 'template.ejs'), 'utf8')
+		var _readme = yield fs.readFile('_readme.md')
+		template = template.replace('{{_readme}}', _readme || '')
+		return ejs.render(template, pkg).trim()
+	})
+}
+
+exports.initParam = initParam
+
+function initParam(badges) {
 	return co(function* () {
 		var pkg = yield readPackageJson()
 
@@ -28,7 +38,7 @@ function render(badges) {
 			github.path = github.user + '/' + github.repo
 		}
 		debug('github: %o', github)
-		
+
 		// badges
 		badges = _.reduce(badges, function(prev, val) {
 			prev[val] = true
@@ -44,11 +54,7 @@ function render(badges) {
 			, badges: badges
 		})
 		debug('pkg: %o', pkg)
-
-		var template = yield fs.readFile(path.resolve(__dirname, 'template.ejs'), 'utf8')
-		var _readme = yield fs.readFile('_readme.md')
-		template = template.replace('{{_readme}}', _readme || '')
-		return ejs.render(template, pkg).trim()
+		return pkg
 	})
 }
 
