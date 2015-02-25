@@ -1,10 +1,19 @@
 pretty-readme
 ===
 
-[![Build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][downloads-url]
+[npm-image]: https://img.shields.io/npm/v/pretty-readme.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/pretty-readme
+[downloads-image]: http://img.shields.io/npm/dm/pretty-readme.svg?style=flat-square
+[downloads-url]: https://npmjs.org/package/pretty-readme
+
+[![Build status][travis-image]][travis-url]
+[travis-image]: https://img.shields.io/travis/chunpu/pretty-readme.svg?style=flat-square
+[travis-url]: https://travis-ci.org/chunpu/pretty-readme
+[![Test coverage][coveralls-image]][coveralls-url]
+[coveralls-image]: https://img.shields.io/coveralls/chunpu/pretty-readme/master.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/chunpu/pretty-readme
 
 generate pretty readme for your repo using package.json
 
@@ -39,13 +48,4 @@ pretty-readme coveralls gittip
 License
 ---
 
-ISC
-
-[npm-image]: https://img.shields.io/npm/v/pretty-readme.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/pretty-readme
-[travis-image]: https://img.shields.io/travis/chunpu/pretty-readme.svg?style=flat-square
-[travis-url]: https://travis-ci.org/chunpu/pretty-readme
-[coveralls-image]: https://img.shields.io/coveralls/chunpu/pretty-readme/master.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/chunpu/pretty-readme
-[downloads-image]: http://img.shields.io/npm/dm/pretty-readme.svg?style=flat-square
-[downloads-url]: https://npmjs.org/package/pretty-readme
+[ISC](LICENSE)

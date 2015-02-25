@@ -86,11 +86,3 @@ function getGithub() {
 		}
 	})
 }
-
-readPackageJson().then(function(val) {
-//	console.log(val)
-})
-
-getGithub().then(function(val) {
-//	console.log(val)
-})
