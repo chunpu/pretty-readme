@@ -1,6 +1,6 @@
 {
   "name": "pretty-readme",
-  "version": "1.2.5",
+  "version": "1.3.0",
   "description": "Generate pretty readme for your repo using package.json",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,8 @@
     "mz": "^1.3.0"
   },
   "keywords": [
-    "readme"
+    "readme",
+	"pretty"
   ],
   "repository": {
     "type": "git",
@@ -34,5 +35,9 @@
   "devDependencies": {
     "mocha": "^2.1.0",
     "istanbul-harmony": "^0.3.1"
+  },
+  "engines": {
+    "iojs": ">= 1.0.0",
+    "node": ">= 0.12.0"
   }
 }
