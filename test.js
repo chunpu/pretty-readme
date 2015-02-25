@@ -6,6 +6,7 @@ describe('init param', function() {
 	it('should have github info', function(done) {
 		render.initParam().then(function(pkg) {
 			var github = pkg.github
+			console.log(github)
 			if (github) {
 				assert('chunpu' == github.user)
 				assert('pretty-readme' == github.repo)

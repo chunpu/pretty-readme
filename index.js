@@ -33,7 +33,7 @@ function initParam(badges) {
 				  url: github
 				, repo: arr.pop().replace('.git', '')
 				, user: arr.pop()
-				, branch: branch
+				, branch: branch || 'master'
 			}
 			github.path = github.user + '/' + github.repo
 		}
