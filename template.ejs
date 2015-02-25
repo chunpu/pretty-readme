@@ -1,6 +1,9 @@
 <%= name %>
 ===
 
+<% if (badges.travis) { -%>
+[![Build status][travis-image]][travis-url]
+<% } -%>
 <% if (1) { -%>
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][downloads-url]
@@ -10,16 +13,11 @@
 [downloads-url]: https://npmjs.org/package/<%= name %>
 <% } -%>
 
-<% if (locals.github ) { -%>
-<% if (badges.travis) { -%>
-[![Build status][travis-image]][travis-url]
-<% } -%>
 <% if (badges.coveralls) { -%>
 [![Test coverage][coveralls-image]][coveralls-url]
 <% } -%>
 <% if (badges.gittip) { -%>
 [![Gittip][gittip-image]][gittip-url]
-<% } -%>
 <% } -%>
 
 <%= description %>
@@ -35,13 +33,8 @@ npm i <%= name %><% if (locals.bin) { %> -g<% } %>
 License
 ---
 
-<% if (hasLicense) { -%>
-[<%= license %>](LICENSE)
-<% } else { -%>
-<%= license %>
-<% } %>
+[![License][license-image]][license-url]
 
-<% if (locals.github ) { -%>
 <% if (badges.travis) { -%>
 [travis-image]: https://img.shields.io/travis/<%= github.path %>.svg?style=flat-square
 [travis-url]: https://travis-ci.org/<%= github.path %>
@@ -54,4 +47,5 @@ License
 [gittip-image]: https://img.shields.io/gittip/<%= github.user %>.svg?style=flat-square
 [gittip-url]: https://www.gittip.com/<%= github.user %>/
 <% } -%>
-<% } -%>
+[license-image]: http://img.shields.io/npm/l/<%= name %>.svg?style=flat-square
+[license-url]: LICENSE

@@ -12,8 +12,8 @@ Write your custom readme in `_readme.md`, `pretty-readme` will insert `_readme.m
 
 #### Support options
 
-- [Coveralls](https://coveralls.io/)
-- [Gittip](https://gratipay.com/)
+- [coveralls](https://coveralls.io/)
+- [gittip](https://gratipay.com/)
 
 ```sh
 pretty-readme coveralls gittip
