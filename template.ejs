@@ -54,4 +54,5 @@ License
 [gittip-url]: https://www.gittip.com/<%= github.user %>/
 <% } -%>
 [license-image]: http://img.shields.io/npm/l/<%= name %>.svg?style=flat-square
-[license-url]: LICENSE
+<% var license = hasLicense ? 'LICENSE' : '#' -%>
+[license-url]: <%= license%>

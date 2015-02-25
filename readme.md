@@ -44,7 +44,7 @@ Write your custom readme in `_readme.md`, `pretty-readme` will insert `_readme.m
 - [gitter](https://gitter.im)
 
 ```sh
-pretty-readme coveralls gittip
+pretty-readme coveralls gittip gitter
 ```
 
 License
@@ -59,4 +59,4 @@ License
 [gittip-image]: https://img.shields.io/gittip/chunpu.svg?style=flat-square
 [gittip-url]: https://www.gittip.com/chunpu/
 [license-image]: http://img.shields.io/npm/l/pretty-readme.svg?style=flat-square
-[license-url]: LICENSE
+[license-url]: #

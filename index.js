@@ -31,7 +31,7 @@ function initParam(badges) {
 			var arr = github.split('/')
 			github = {
 				  url: github
-				, repo: arr.pop()
+				, repo: arr.pop().replace('.git', '')
 				, user: arr.pop()
 				, branch: branch
 			}
