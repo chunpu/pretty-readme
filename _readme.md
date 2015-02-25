@@ -12,9 +12,10 @@ Write your custom readme in `_readme.md`, `pretty-readme` will insert `_readme.m
 
 #### Support options
 
-- [coveralls](https://coveralls.io/)
-- [gittip](https://gratipay.com/)
+- [coveralls](https://coveralls.io)
+- [gittip](https://gratipay.com)
+- [gitter](https://gitter.im)
 
 ```sh
-pretty-readme coveralls gittip
+pretty-readme coveralls gittip gitter
 ```

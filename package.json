@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run test-cov",
     "test-cov": "node --harmony node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- --check-leaks",
-    "readme": "./bin/pretty-readme.js coveralls gittip > readme.md"
+    "readme": "./bin/pretty-readme.js coveralls gittip gitter > readme.md"
   },
   "bin": {
     "pretty-readme": "./bin/pretty-readme.js"

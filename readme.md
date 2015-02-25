@@ -4,13 +4,17 @@ pretty-readme
 [![Build status][travis-image]][travis-url]
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][downloads-url]
+[![Dependency Status][david-image]][david-url]
 [npm-image]: https://img.shields.io/npm/v/pretty-readme.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/pretty-readme
 [downloads-image]: http://img.shields.io/npm/dm/pretty-readme.svg?style=flat-square
 [downloads-url]: https://npmjs.org/package/pretty-readme
+[david-image]: http://img.shields.io/david/chunpu/pretty-readme.svg?style=flat-square
+[david-url]: https://david-dm.org/chunpu/pretty-readme
 
 [![Test coverage][coveralls-image]][coveralls-url]
 [![Gittip][gittip-image]][gittip-url]
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/chunpu/pretty-readme)
 
 Generate pretty readme for your repo using package.json
 
@@ -35,8 +39,9 @@ Write your custom readme in `_readme.md`, `pretty-readme` will insert `_readme.m
 
 #### Support options
 
-- [coveralls](https://coveralls.io/)
-- [gittip](https://gratipay.com/)
+- [coveralls](https://coveralls.io)
+- [gittip](https://gratipay.com)
+- [gitter](https://gitter.im)
 
 ```sh
 pretty-readme coveralls gittip
