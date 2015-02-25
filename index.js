@@ -52,6 +52,7 @@ function initParam(badges) {
 		_.extend(pkg, {
 			  github: github
 			, badges: badges
+			, hasLicense: yield hasLicense()
 		})
 		debug('pkg: %o', pkg)
 		return pkg
@@ -66,6 +67,10 @@ function readPackageJson() {
 
 function hasTravis() {
 	return fs.exists('.travis.yml')
+}
+
+function hasLicense() {
+	return fs.exists('LICENSE')
 }
 
 function getBranch() {

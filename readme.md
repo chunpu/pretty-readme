@@ -9,13 +9,10 @@ pretty-readme
 [downloads-url]: https://npmjs.org/package/pretty-readme
 
 [![Build status][travis-image]][travis-url]
-[travis-image]: https://img.shields.io/travis/chunpu/pretty-readme.svg?style=flat-square
-[travis-url]: https://travis-ci.org/chunpu/pretty-readme
 [![Test coverage][coveralls-image]][coveralls-url]
-[coveralls-image]: https://img.shields.io/coveralls/chunpu/pretty-readme/master.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/chunpu/pretty-readme
+[![Gittip][gittip-image]][gittip-url]
 
-generate pretty readme for your repo using package.json
+Generate pretty readme for your repo using package.json
 
 Installation
 ---
@@ -39,7 +36,7 @@ Write your custom readme in `_readme.md`, `pretty-readme` will insert `_readme.m
 #### Support options
 
 - [Coveralls](https://coveralls.io/)
-- gittip
+- [Gittip](https://gratipay.com/)
 
 ```sh
 pretty-readme coveralls gittip
@@ -48,4 +45,12 @@ pretty-readme coveralls gittip
 License
 ---
 
-[ISC](LICENSE)
+ISC
+
+
+[travis-image]: https://img.shields.io/travis/chunpu/pretty-readme.svg?style=flat-square
+[travis-url]: https://travis-ci.org/chunpu/pretty-readme
+[coveralls-image]: https://img.shields.io/coveralls/chunpu/pretty-readme/master.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/chunpu/pretty-readme
+[gittip-image]: https://img.shields.io/gittip/chunpu.svg?style=flat-square
+[gittip-url]: https://www.gittip.com/chunpu/

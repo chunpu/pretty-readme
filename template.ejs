@@ -13,18 +13,12 @@
 <% if (locals.github ) { -%>
 <% if (badges.travis) { -%>
 [![Build status][travis-image]][travis-url]
-[travis-image]: https://img.shields.io/travis/<%= github.path %>.svg?style=flat-square
-[travis-url]: https://travis-ci.org/<%= github.path %>
 <% } -%>
 <% if (badges.coveralls) { -%>
 [![Test coverage][coveralls-image]][coveralls-url]
-[coveralls-image]: https://img.shields.io/coveralls/<%= github.path %>/<%= github.branch %>.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/<%= github.path %>
 <% } -%>
 <% if (badges.gittip) { -%>
 [![Gittip][gittip-image]][gittip-url]
-[gittip-image]: https://img.shields.io/gittip/<%= github.user %>.svg?style=flat-square
-[gittip-url]: https://www.gittip.com/<%= github.user %>/
 <% } -%>
 <% } -%>
 
@@ -41,4 +35,23 @@ npm i <%= name %><% if (locals.bin) { %> -g<% } %>
 License
 ---
 
+<% if (hasLicense) { -%>
 [<%= license %>](LICENSE)
+<% } else { -%>
+<%= license %>
+<% } %>
+
+<% if (locals.github ) { -%>
+<% if (badges.travis) { -%>
+[travis-image]: https://img.shields.io/travis/<%= github.path %>.svg?style=flat-square
+[travis-url]: https://travis-ci.org/<%= github.path %>
+<% } -%>
+<% if (badges.coveralls) { -%>
+[coveralls-image]: https://img.shields.io/coveralls/<%= github.path %>/<%= github.branch %>.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/<%= github.path %>
+<% } -%>
+<% if (badges.gittip) { -%>
+[gittip-image]: https://img.shields.io/gittip/<%= github.user %>.svg?style=flat-square
+[gittip-url]: https://www.gittip.com/<%= github.user %>/
+<% } -%>
+<% } -%>

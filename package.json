@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test-cov",
-    "test-cov": "istanbul cover node_modules/.bin/_mocha -- --check-leaks",
-    "readme": "./bin/pretty-readme.js coveralls > readme.md"
+    "test-cov": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- --check-leaks",
+    "readme": "./bin/pretty-readme.js coveralls gittip > readme.md"
   },
   "bin": {
     "pretty-readme": "./bin/pretty-readme.js"
