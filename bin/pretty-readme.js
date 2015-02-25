@@ -1,3 +1,6 @@
 #!/usr/bin/env node
-var readme = require('../')(process.argv.slice(2))
-console.log(readme)
+require('../')(process.argv.slice(2)).then(function(readme) {
+	console.log(readme)
+}, function(err) {
+	console.error(err)
+})

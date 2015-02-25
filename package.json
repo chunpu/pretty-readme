@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node test",
-	"readme": "./bin/pretty-readme.js > readme.md"
+    "readme": "./bin/pretty-readme.js > readme.md"
   },
   "bin": {
     "pretty-readme": "./bin/pretty-readme.js"
@@ -13,28 +13,15 @@
   "author": "chunpu",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^2.2.1"
+    "co": "^4.4.0",
+    "debug": "^2.1.1",
+    "ejs": "^2.3.1",
+    "min-util": "^1.1.1",
+    "mz": "^1.3.0"
   },
-  "devDependencies": {},
   "keywords": [
     "readme"
   ],
-  "_shasum": "5f0bbe49cefea37c821c0d2adcf54db247dda5cc",
-  "_from": "pretty-readme@*",
-  "_npmVersion": "2.0.0-alpha-5",
-  "_npmUser": {
-    "name": "ftft1885",
-    "email": "ftft1885@163.com"
-  },
-  "maintainers": [
-    "ftft1885 <ftft1885@163.com>"
-  ],
-  "dist": {
-    "shasum": "5f0bbe49cefea37c821c0d2adcf54db247dda5cc",
-    "tarball": "http://registry.npmjs.org/pretty-readme/-/pretty-readme-1.1.1.tgz"
-  },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/pretty-readme/-/pretty-readme-1.1.1.tgz",
   "repository": {
     "type": "git",
     "url": "https://github.com/chunpu/pretty-readme.git"

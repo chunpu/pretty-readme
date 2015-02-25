@@ -11,7 +11,7 @@ Installation
 ---
 
 ```sh
-npm install pretty-readme -g
+npm i pretty-readme -g
 ```
 
 Usage

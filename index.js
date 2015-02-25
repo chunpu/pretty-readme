@@ -1,52 +1,90 @@
-var fs = require('fs')
+var fs = require('mz/fs')
 var ejs = require('ejs')
 var path = require('path')
-var util = require('util')
 var url = require('url')
+var co = require('co')
+var _ = require('min-util')
+var debug = require('debug')('pretty-readme')
 
-module.exports = function(args) {
-    var pwd = process.cwd()
-    var name = path.resolve(pwd, 'package.json')
-    var str = fs.readFileSync(name, 'utf8')
-    var pkg
-    try {
-        pkg = JSON.parse(str)
-    } catch (e) {}
-    if (!pkg) throw new Error('Invalid format: ' + str)
-    pkg.hasTravis = hasTravis()
-    try {
-        pkg._readme = fs.readFileSync(path.resolve(pwd, '_readme.md'))
-    } catch (e) {}
-    var repo = pkg.repository
-    if ('object' == typeof repo) {
-        repo = repo.url
-        if (/http/.test(repo)) {
-            repo = url.parse(repo).pathname.replace('.git', '').substr(1)
-        }
-    }
-    if (repo) {
-        pkg.repo = repo
-        var arr = repo.split('/')
-        pkg.user = arr[0]
-        pkg.reponame = arr[1]
-    }
-    if (args && args.length) {
-        for (var i = 0, label; label = args[i++];) {
-            pkg[label] = true
-        }
-    }
-    //console.log(pkg)
-    return render(pkg)
+module.exports = function(badges) {
+	return render(badges)
+}
+
+function render(badges) {
+	return co(function* () {
+		var pkg = yield readPackageJson()
+
+		// github
+		var github = yield getGithub()
+		if (github) {
+			var branch = yield getBranch()
+			var arr = github.split('/')
+			github = {
+				  url: github
+				, repo: arr.pop()
+				, user: arr.pop()
+				, branch: branch
+			}
+			github.path = github.user + '/' + github.repo
+		}
+		debug('github: %o', github)
+		
+		// badges
+		badges = _.reduce(badges, function(prev, val) {
+			prev[val] = true
+			return prev
+		}, {})
+		_.extend(badges, yield {
+			  travis: hasTravis()
+		})
+		debug('badges: %o', badges)
+		
+		_.extend(pkg, {
+			  github: github
+			, badges: badges
+		})
+		debug('pkg: %o', pkg)
+
+		var template = yield fs.readFile(path.resolve(__dirname, 'template.ejs'), 'utf8')
+		var _readme = yield fs.readFile('_readme.md')
+		template = template.replace('{{_readme}}', _readme || '')
+		return ejs.render(template, pkg).trim()
+	})
+}
+
+function readPackageJson() {
+	return fs.readFile('package.json').then(function(val) {
+		return JSON.parse(val)
+	})
 }
 
 function hasTravis() {
-    var travisPath = path.resolve(process.cwd(), '.travis.yml')
-    return fs.existsSync(travisPath)
+	return fs.exists('.travis.yml')
 }
 
-function render(pkg) {
-    var pathname = path.resolve(__dirname, 'template.ejs')
-    var str = fs.readFileSync(pathname, 'utf8')
-    var readme = ejs.render(str, pkg)
-    return readme.trim()
+function getBranch() {
+	return fs.readFile('.git/HEAD', 'utf8').then(function(val) {
+		return val.split('/').pop().trim()
+	})
 }
+
+function getGithub() {
+	return fs.exists('.git').then(function(val) {
+		if (val) {
+			return fs.readFile('.git/config', 'utf8').then(function(config) {
+				var matched = config.match(/github.com\/.*\/.*/)
+				if (matched) {
+					return matched[0]
+				}
+			})
+		}
+	})
+}
+
+readPackageJson().then(function(val) {
+//	console.log(val)
+})
+
+getGithub().then(function(val) {
+//	console.log(val)
+})
