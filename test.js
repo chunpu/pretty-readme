@@ -6,11 +6,19 @@ describe('init param', function() {
 	it('should have github info', function(done) {
 		render.initParam().then(function(pkg) {
 			var github = pkg.github
-			assert('chunpu' == github.user)
-			assert('pretty-readme' == github.repo)
-			assert('master' == github.branch)
-			assert('chunpu/pretty-readme' == github.path)
+			if (github) {
+				assert('chunpu' == github.user)
+				assert('pretty-readme' == github.repo)
+				assert('master' == github.branch)
+				assert('chunpu/pretty-readme' == github.path)
+			}
 			done()
+		}, function(err) {
+			if (err) {
+				console.error(err.stack)
+				assert(false)
+				done()
+			}
 		})
 	})
 
