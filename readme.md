@@ -15,7 +15,7 @@ pretty-readme
 
 [![Test coverage][coveralls-image]][coveralls-url]
 [![Gittip][gittip-image]][gittip-url]
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/chunpu/pretty-readme)
+[![Gitter][gitter-image]][gitter-url]
 
 Generate pretty readme for your repo using package.json
 
@@ -59,5 +59,7 @@ License
 [coveralls-url]: https://coveralls.io/r/chunpu/pretty-readme
 [gittip-image]: https://img.shields.io/gittip/chunpu.svg?style=flat-square
 [gittip-url]: https://www.gittip.com/chunpu/
+[gitter-image]: https://badges.gitter.im/chunpu/pretty-readme.svg
+[gitter-url]: https://gitter.im/chunpu/pretty-readme
 [license-image]: http://img.shields.io/npm/l/pretty-readme.svg?style=flat-square
 [license-url]: #

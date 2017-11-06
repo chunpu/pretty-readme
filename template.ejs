@@ -24,7 +24,7 @@
 [![Gittip][gittip-image]][gittip-url]
 <% } -%>
 <% if (badges.gitter) { -%>
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/<%= github.path %>)
+[![Gitter][gitter-image]][gitter-url]
 <% } -%>
 
 <%= description %>
@@ -53,6 +53,10 @@ License
 <% if (badges.gittip) { -%>
 [gittip-image]: https://img.shields.io/gittip/<%= github.user %>.svg?style=flat-square
 [gittip-url]: https://www.gittip.com/<%= github.user %>/
+<% } -%>
+<% if (badges.gitter) { -%>
+[gitter-image]: https://badges.gitter.im/<%= github.path %>.svg
+[gitter-url]: https://gitter.im/<%= github.path %>
 <% } -%>
 [license-image]: http://img.shields.io/npm/l/<%= name %>.svg?style=flat-square
 <% var license = hasLicense ? 'LICENSE' : '#' -%>
