@@ -80,12 +80,17 @@ function getBranch() {
 }
 
 function getGithub() {
+
 	return fs.exists('.git').then(function(val) {
 		if (val) {
 			return fs.readFile('.git/config', 'utf8').then(function(config) {
-				var matched = config.match(/github.com\/.*\/.*/)
+				// e.g.
+				// git@github.com:chunpu/pretty-readme.git
+				// https://github.com/chunpu/pretty-readme
+				var reg = /github.com.*[\w-]+\/[\w-]+/
+				var matched = reg.exec(config)
 				if (matched) {
-					return matched[0]
+					return matched[0].replace(':', '/')
 				}
 			})
 		}
