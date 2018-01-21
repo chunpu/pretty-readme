@@ -23,17 +23,16 @@ describe('init param', function() {
 		})
 	})
 
-	it('should get badge info', function(done) {
-		render.initParam().then(function(pkg) {
-			assert.deepEqual(pkg.badges, {
+	it('should get badge info', function() {
+		return render.initParam().then(function(data) {
+			assert.deepEqual(data.badges, {
 				travis: true
 			})
-			done()
 		})
 	})
 
 	it('can custom badges', function(done) {
-		render.initParam(['coveralls', 'gittip']).then(function(pkg) {
+		render.initParam({coveralls: true, gittip: true}).then(function(pkg) {
 			assert.deepEqual(pkg.badges, {
 				  travis: true
 				, coveralls: true

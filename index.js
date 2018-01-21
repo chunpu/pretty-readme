@@ -6,21 +6,32 @@ var co = require('co')
 var _ = require('min-util')
 var debug = require('debug')('pretty-readme')
 
+var badgeList = 'coveralls gittip gitter'.split(' ')
+
 module.exports = exports = render
 
-function render(badges) {
+function render(program) {
+	program = program || {}
 	return co(function* () {
-		var pkg = yield initParam(badges)
+		var data = yield initParam(program)
+		var inputFile = program.inputFile || '.README.md'
+		var outputFile = program.outputFile || 'README.md'
 		var template = yield fs.readFile(path.resolve(__dirname, 'template.ejs'), 'utf8')
-		var _readme = yield fs.readFile('_readme.md')
-		template = template.replace('{{_readme}}', _readme || '')
-		return ejs.render(template, pkg).trim()
+		var readme = yield fs.readFile(inputFile, 'utf8')
+		data = _.extend({}, data, {
+			readme: readme.trim()
+		})
+		debug('data: %o', data)
+		var outputData = ejs.render(template, data)
+		yield fs.writeFile(outputFile, outputData)
+		return outputData
 	})
 }
 
 exports.initParam = initParam
 
-function initParam(badges) {
+function initParam(program) {
+	program = program || {}
 	return co(function* () {
 		var pkg = yield readPackageJson()
 
@@ -40,22 +51,23 @@ function initParam(badges) {
 		debug('github: %o', github)
 
 		// badges
-		badges = _.reduce(badges, function(prev, val) {
-			prev[val] = true
-			return prev
-		}, {})
+		var badges = {}
+		_.each(badgeList, function(badge) {
+			if (program[badge]) {
+				badges[badge] = program[badge]
+			}
+		})
 		_.extend(badges, yield {
 			  travis: hasTravis()
 		})
 		debug('badges: %o', badges)
 		
-		_.extend(pkg, {
+		var data = _.extend({}, pkg, {
 			  github: github
 			, badges: badges
 			, hasLicense: yield hasLicense()
 		})
-		debug('pkg: %o', pkg)
-		return pkg
+		return data
 	})
 }
 

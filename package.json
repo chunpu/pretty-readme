@@ -1,12 +1,12 @@
 {
   "name": "pretty-readme",
-  "version": "1.4.1",
+  "version": "2.0.0",
   "description": "Generate pretty readme for your repo using package.json",
   "main": "index.js",
   "scripts": {
     "test": "npm run test-cov",
     "test-cov": "node --harmony node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- --check-leaks",
-    "readme": "./bin/pretty-readme.js coveralls gittip gitter > readme.md"
+    "readme": "./bin/pretty-readme.js --coveralls --gittip --gitter"
   },
   "bin": {
     "pretty-readme": "./bin/pretty-readme.js"
@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "co": "^4.4.0",
+    "commander": "^2.13.0",
     "debug": "^2.1.1",
     "ejs": "^2.3.1",
     "min-util": "^1.1.1",
@@ -22,7 +23,7 @@
   },
   "keywords": [
     "readme",
-	"pretty"
+    "pretty"
   ],
   "repository": {
     "type": "git",

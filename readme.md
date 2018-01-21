@@ -30,13 +30,20 @@ Usage
 ---
 
 ```sh
-pretty-readme > readme.md
+pretty-readme
+```
+
+Options
+---
+
+```sh
+pretty-readme --input-file .README.md --output-file README.md
 ```
 
 Advanced
 ---
 
-Write your custom readme in `_readme.md`, `pretty-readme` will insert `_readme.md` before `License`
+Write your custom readme in `.readme.md`, `pretty-readme` will insert `.readme.md` before `License`
 
 #### Support options
 
@@ -45,7 +52,7 @@ Write your custom readme in `_readme.md`, `pretty-readme` will insert `_readme.m
 - [gitter](https://gitter.im)
 
 ```sh
-pretty-readme coveralls gittip gitter
+pretty-readme --coveralls --gittip --gitter
 ```
 
 License
