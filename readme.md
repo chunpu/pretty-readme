@@ -37,6 +37,7 @@ Options
 ---
 
 ```sh
+'quote'
   Usage: pretty-readme [options]
 
 

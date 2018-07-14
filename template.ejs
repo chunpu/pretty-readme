@@ -1,4 +1,4 @@
-<%= name %>
+<%- name %>
 ===
 
 <% if (badges.travis) { -%>
@@ -9,12 +9,12 @@
 [![Downloads][downloads-image]][downloads-url]
 [![Dependency Status][david-image]][david-url]
 
-[npm-image]: https://img.shields.io/npm/v/<%= name %>.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/<%= name %>
-[downloads-image]: http://img.shields.io/npm/dm/<%= name %>.svg?style=flat-square
-[downloads-url]: https://npmjs.org/package/<%= name %>
-[david-image]: http://img.shields.io/david/<%= github.path %>.svg?style=flat-square
-[david-url]: https://david-dm.org/<%= github.path %>
+[npm-image]: https://img.shields.io/npm/v/<%- name %>.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/<%- name %>
+[downloads-image]: http://img.shields.io/npm/dm/<%- name %>.svg?style=flat-square
+[downloads-url]: https://npmjs.org/package/<%- name %>
+[david-image]: http://img.shields.io/david/<%- github.path %>.svg?style=flat-square
+[david-url]: https://david-dm.org/<%- github.path %>
 <% } -%>
 
 <% if (badges.coveralls) { -%>
@@ -27,16 +27,16 @@
 [![Gitter][gitter-image]][gitter-url]
 <% } -%>
 
-<%= description %>
+<%- description %>
 
 Installation
 ---
 
 ```sh
-npm i <%= name %><% if (locals.bin) { %> -g<% } %>
+npm i <%- name %><% if (locals.bin) { %> -g<% } %>
 ```
 
-<%= readme %>
+<%- readme %>
 
 License
 ---
@@ -44,21 +44,21 @@ License
 [![License][license-image]][license-url]
 
 <% if (badges.travis) { -%>
-[travis-image]: https://img.shields.io/travis/<%= github.path %>.svg?style=flat-square
-[travis-url]: https://travis-ci.org/<%= github.path %>
+[travis-image]: https://img.shields.io/travis/<%- github.path %>.svg?style=flat-square
+[travis-url]: https://travis-ci.org/<%- github.path %>
 <% } -%>
 <% if (badges.coveralls) { -%>
-[coveralls-image]: https://img.shields.io/coveralls/<%= github.path %>/<%= github.branch %>.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/<%= github.path %>
+[coveralls-image]: https://img.shields.io/coveralls/<%- github.path %>/<%- github.branch %>.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/<%- github.path %>
 <% } -%>
 <% if (badges.gittip) { -%>
-[gittip-image]: https://img.shields.io/gittip/<%= github.user %>.svg?style=flat-square
-[gittip-url]: https://www.gittip.com/<%= github.user %>/
+[gittip-image]: https://img.shields.io/gittip/<%- github.user %>.svg?style=flat-square
+[gittip-url]: https://www.gittip.com/<%- github.user %>/
 <% } -%>
 <% if (badges.gitter) { -%>
-[gitter-image]: https://badges.gitter.im/<%= github.path %>.svg
-[gitter-url]: https://gitter.im/<%= github.path %>
+[gitter-image]: https://badges.gitter.im/<%- github.path %>.svg
+[gitter-url]: https://gitter.im/<%- github.path %>
 <% } -%>
-[license-image]: http://img.shields.io/npm/l/<%= name %>.svg?style=flat-square
+[license-image]: http://img.shields.io/npm/l/<%- name %>.svg?style=flat-square
 <% var license = hasLicense ? 'LICENSE' : '#' -%>
-[license-url]: <%= license%>
+[license-url]: <%- license%>
