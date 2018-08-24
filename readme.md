@@ -23,7 +23,7 @@ Installation
 ---
 
 ```sh
-npm i pretty-readme -g
+npm i chunpu/pretty-readme -g
 ```
 
 Usage
@@ -37,7 +37,6 @@ Options
 ---
 
 ```sh
-'quote'
   Usage: pretty-readme [options]
 
 
